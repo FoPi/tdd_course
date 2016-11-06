@@ -1,0 +1,15 @@
+{
+  "name": "innonic/tdd_course_1",
+  "description": "TDD course coding task 1",
+  "minimum-stability": "dev",
+  "license": "",
+  "authors": [
+    {
+      "name": "peter.fodor",
+      "email": "peter.fodor@innonic.com"
+    }
+  ],
+  "require": {
+    "phpunit/phpunit": "^4.8"
+  }
+}
