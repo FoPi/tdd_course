@@ -1,11 +1,6 @@
 <?php
-require_once(dirname(dirname(__FILE__)) . "/src/MessageParser.php");
-
 /**
- * Created by PhpStorm.
- * User: peterfodor
- * Date: 2016.11.06.
- * Time: 9:34
+ * Class MessageParserTest
  */
 class MessageParserTest extends PHPUnit_Framework_TestCase
 {
@@ -19,10 +14,10 @@ class MessageParserTest extends PHPUnit_Framework_TestCase
         $this->messageParser = new MessageParser();
     }
 
-    /*public function testEmptyTextConversion()
+    public function testEmptyTextConversion()
     {
         $this->assertEquals("", $this->messageParser->parse(""));
-    }*/
+    }
 
     public function testBoldTextConversion()
     {
@@ -31,14 +26,18 @@ class MessageParserTest extends PHPUnit_Framework_TestCase
 
     public function testMultipleBoldTextConversion()
     {
-        $this->assertEquals("<strong>text</strong><strong>text2</strong>",
-            $this->messageParser->parse("**text****text2**"));
+        $this->assertEquals(
+            "<strong>text</strong><strong>text2</strong>",
+            $this->messageParser->parse("**text****text2**")
+        );
     }
 
     public function testNotMatchingBoldTextConversion()
     {
-        $this->assertEquals("*<strong>text</strong>**<strong>text2</strong>",
-            $this->messageParser->parse("***text******text2**"));
+        $this->assertEquals(
+            "*<strong>text</strong>**<strong>text2</strong>",
+            $this->messageParser->parse("***text******text2**")
+        );
     }
 
     public function testItalicTextConversion()
@@ -53,7 +52,7 @@ class MessageParserTest extends PHPUnit_Framework_TestCase
 
     //<editor-fold desc="Given test cases">
     /**
-     * @group given tast case
+     * @group given test case
      */
     public function testBoldExampleTextConversion()
     {
@@ -61,7 +60,7 @@ class MessageParserTest extends PHPUnit_Framework_TestCase
     }
 
     /**
-     * @group given tast case
+     * @group given test case
      */
     public function testItalicExampleTextConversion()
     {
@@ -69,7 +68,7 @@ class MessageParserTest extends PHPUnit_Framework_TestCase
     }
 
     /**
-     * @group given tast case
+     * @group given test case
      */
     public function testPreFormattedExampleTextConversion()
     {
@@ -77,7 +76,7 @@ class MessageParserTest extends PHPUnit_Framework_TestCase
     }
 
     /**
-     * @group given tast case
+     * @group given test case
      */
     public function testLinkExampleTextConversion()
     {
@@ -88,7 +87,7 @@ class MessageParserTest extends PHPUnit_Framework_TestCase
     }
 
     /**
-     * @group given tast case
+     * @group given test case
      */
     public function testImageExampleTextConversion()
     {
